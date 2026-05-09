@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-pink: #FF0080;
+  --color-neon-blue: #00F5FF;
+  --color-neon-green: #B4FF00;
+  --color-neon-orange: #FF7A00;
+  --color-neon-purple: #7B2EFF;
+  --color-midnight: #0A0A0A;
+  
+  --font-space: "Space Grotesk", sans-serif;
+  --font-syne: "Syne", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-midnight text-white overflow-x-hidden;
+    font-family: var(--font-space);
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: var(--font-syne);
+    @apply font-black uppercase;
+  }
+}
+
+@layer utilities {
+  .neon-glow-pink {
+    text-shadow: 0 0 10px #FF0080, 0 0 20px #FF0080;
+  }
+  .neon-glow-blue {
+    text-shadow: 0 0 10px #00F5FF, 0 0 20px #00F5FF;
+  }
+  .neon-glow-green {
+    text-shadow: 0 0 10px #B4FF00, 0 0 20px #B4FF00;
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .chaotic-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
+
+  .marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 2rem;
+  }
+
+  .marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: 2rem;
+    animation: scroll 20s linear infinite;
+  }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+}
+
+/* Custom Cursor Trail */
+.cursor-trail {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: var(--color-neon-blue);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  filter: blur(2px);
+  mix-blend-mode: screen;
+}
+
+/* Noise Texture Overlay */
+.noise-bg::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 50;
+}

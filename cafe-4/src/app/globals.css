@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #F8F5F0;
+  --color-sage: #6B705C;
+  --color-sage-light: #DDE5D3;
+  --color-earth: #B08968;
+  --color-warm-beige: #E6CCB2;
+  --color-paper: #FFFDF8;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "DM Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-sage overflow-x-hidden selection:bg-sage-light selection:text-sage;
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    @apply font-normal italic;
+  }
+}
+
+@layer utilities {
+  .paper-texture {
+    position: relative;
+  }
+  
+  .paper-texture::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  .organic-shadow {
+    box-shadow: 0 10px 30px -10px rgba(107, 112, 92, 0.1);
+  }
+  
+  .sun-glow {
+    background: radial-gradient(circle at top right, rgba(255, 253, 248, 0.8) 0%, transparent 70%);
+  }
+}
+
+/* Custom Scrollbar for Organic Feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-warm-beige);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-earth);
+}
+
+.leaf-float {
+  pointer-events: none;
+  position: absolute;
+  z-index: 5;
+}

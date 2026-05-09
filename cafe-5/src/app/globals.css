@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jungle-deep: #020806;
+  --color-jungle-dark: #071510;
+  --color-jungle-mid: #143525;
+  --color-jungle-light: #2A5A40;
+  --color-jungle-fresh: #A3C9A8;
+  --color-sand: #E6D5B8;
+  --color-mist: #DDE5E0;
+  --color-void: #000000;
+  
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Satoshi", sans-serif;
+  --font-display: "Clash Display", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-void text-mist overflow-x-hidden selection:bg-jungle-light selection:text-sand;
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    @apply font-black uppercase tracking-tighter;
+  }
+}
+
+@layer utilities {
+  .cinematic-shadow {
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.95);
+  }
+  
+  .glass-nature {
+    @apply bg-void/50 backdrop-blur-xl border border-sand/10;
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 40px rgba(230, 213, 184, 0.4);
+  }
+}
+
+/* Custom Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-jungle-mid);
+  border-radius: 10px;
+}
