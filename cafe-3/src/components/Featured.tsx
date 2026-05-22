@@ -13,7 +13,7 @@ const drinks = [
 
 const Featured = () => {
   return (
-    <section className="py-32 px-8 bg-midnight overflow-hidden">
+    <section id="featured" className="py-32 px-8 bg-midnight overflow-hidden">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-end justify-between mb-24 gap-8">
           <h2 className="text-[10vw] leading-none tracking-tighter">

@@ -11,7 +11,7 @@ const events = [
 
 const Events = () => {
   return (
-    <section className="py-32 px-8 bg-black relative">
+    <section id="events" className="py-32 px-8 bg-black relative">
       <div className="container mx-auto">
         <h2 className="text-[12vw] font-black leading-none mb-24 text-center">
           LATE <span className="text-neon-orange">NIGHTS</span>

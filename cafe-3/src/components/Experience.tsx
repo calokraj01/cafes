@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Experience = () => {
   return (
-    <section className="py-32 bg-neon-purple text-black overflow-hidden relative">
+    <section id="experience" className="py-32 bg-neon-purple text-black overflow-hidden relative">
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         <h2 className="text-[30vw] font-black uppercase leading-none select-none">VIBE</h2>
       </div>

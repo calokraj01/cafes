@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Merch = () => {
   return (
-    <section className="py-32 bg-midnight border-y-8 border-neon-green">
+    <section id="merch" className="py-32 bg-midnight border-y-8 border-neon-green">
       <div className="container mx-auto px-8">
         <div className="text-center mb-24">
           <h2 className="text-8xl font-black text-neon-green mb-4 neon-glow-green uppercase tracking-widest">DRIP</h2>

@@ -1,17 +1,20 @@
 import React from 'react';
 import SmoothScroll from '@/components/SmoothScroll';
 import Cursor from '@/components/Cursor';
+import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Featured from '@/components/Featured';
 import Experience from '@/components/Experience';
 import Merch from '@/components/Merch';
 import Events from '@/components/Events';
+import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
     <SmoothScroll>
       <main className="noise-bg selection:bg-neon-pink selection:text-black">
+        <Navbar />
         <Cursor />
         <Hero />
         
@@ -30,8 +33,10 @@ export default function Home() {
         <Experience />
         <Merch />
         <Events />
+        <Contact />
         <Footer />
       </main>
     </SmoothScroll>
   );
 }
+
